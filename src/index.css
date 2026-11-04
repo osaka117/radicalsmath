@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --term-font-mono: 'Share Tech Mono', 'JetBrains Mono', monospace;
+  --term-font-pixel: 'VT323', monospace;
+  --term-font-math: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Theme variables */
+.theme-amber {
+  --color-bg: #120e06;
+  --color-surface: #1c150c;
+  --color-surface-hover: #261d11;
+  --color-border: #78350f;
+  --color-border-bright: #b45309;
+  --color-primary: #f59e0b;
+  --color-primary-bright: #fbbf24;
+  --color-primary-dim: #92400e;
+  --color-text: #fef3c7;
+  --color-text-dim: #b45309;
+  --color-text-muted: #78350f;
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-scanline: rgba(245, 158, 11, 0.035);
+  --color-glow: rgba(245, 158, 11, 0.15);
+}
+
+.theme-green {
+  --color-bg: #07130a;
+  --color-surface: #0e1f13;
+  --color-surface-hover: #162b1b;
+  --color-border: #14532d;
+  --color-border-bright: #16a34a;
+  --color-primary: #22c55e;
+  --color-primary-bright: #4ade80;
+  --color-primary-dim: #15803d;
+  --color-text: #dcfce7;
+  --color-text-dim: #16a34a;
+  --color-text-muted: #14532d;
+  --color-success: #22c55e;
+  --color-error: #f87171;
+  --color-scanline: rgba(34, 197, 94, 0.035);
+  --color-glow: rgba(34, 197, 94, 0.15);
+}
+
+.theme-blue {
+  --color-bg: #061021;
+  --color-surface: #0c1a33;
+  --color-surface-hover: #132649;
+  --color-border: #1e3a8a;
+  --color-border-bright: #2563eb;
+  --color-primary: #38bdf8;
+  --color-primary-bright: #7dd3fc;
+  --color-primary-dim: #0284c7;
+  --color-text: #e0f2fe;
+  --color-text-dim: #0284c7;
+  --color-text-muted: #1e3a8a;
+  --color-success: #34d399;
+  --color-error: #f87171;
+  --color-scanline: rgba(56, 189, 248, 0.035);
+  --color-glow: rgba(56, 189, 248, 0.15);
+}
+
+.theme-paper {
+  --color-bg: #f5efe6;
+  --color-surface: #e9e1d2;
+  --color-surface-hover: #ddd3c2;
+  --color-border: #a89f91;
+  --color-border-bright: #786f63;
+  --color-primary: #1e3a5f;
+  --color-primary-bright: #0f2744;
+  --color-primary-dim: #475569;
+  --color-text: #1c1917;
+  --color-text-dim: #57534e;
+  --color-text-muted: #8c8275;
+  --color-success: #15803d;
+  --color-error: #b91c1c;
+  --color-scanline: rgba(0, 0, 0, 0.02);
+  --color-glow: transparent;
+}
+
+/* Retro Scanlines */
+.scanlines-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    var(--color-scanline) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Vintage CRT Screen Bezel Glow */
+.crt-screen {
+  box-shadow: inset 0 0 40px var(--color-glow);
+}
+
+/* Custom Math Styling */
+.math-vinculum {
+  border-top: 1.75px solid currentColor;
+  padding-top: 1px;
+}
+
+.retro-box {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  box-shadow: 2px 2px 0px 0px var(--color-border);
+}
+
+.retro-box-active {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border-bright);
+  box-shadow: 3px 3px 0px 0px var(--color-border-bright);
+}
+
+.retro-btn {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  color: var(--color-text);
+  box-shadow: 2px 2px 0px 0px var(--color-border);
+  transition: all 0.1s ease-in-out;
+}
+
+.retro-btn:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary-bright);
+  box-shadow: 3px 3px 0px 0px var(--color-primary);
+  transform: translate(-1px, -1px);
+}
+
+.retro-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px var(--color-border);
+}
+
+.retro-btn-primary {
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary-bright);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 2px 2px 0px 0px var(--color-border-bright);
+}
+
+.retro-btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-bright);
+  box-shadow: 3px 3px 0px 0px var(--color-primary);
+  transform: translate(-1px, -1px);
+}
+
+.retro-btn-primary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px;
+}

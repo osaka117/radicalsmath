@@ -1,0 +1,6 @@
+{
+  "name": "RadicalOS - Operations of Radicals Reviewer",
+  "description": "Retro-styled mathematics reviewer and practice system for mastering operations of radicals, including simplification, multiplication, division, and addition across multiple difficulty levels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
